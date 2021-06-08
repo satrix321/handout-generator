@@ -1,8 +1,22 @@
 <template>
-  <header class="fixed h-16 flex items-center mx-4 z-50 bg-white w-full">
-    <router-link to="/">HANDOUT GENERATOR</router-link>
+  <header
+    class="
+      fixed
+      h-16
+      flex
+      items-center
+      px-4
+      z-50
+      bg-gray-100
+      border-b-2 border-black
+      w-full
+    "
+  >
+    <div class="logo-container">
+      <router-link to="/" class="logo">HANDOUT GENERATOR</router-link>
+    </div>
   </header>
-  <div class="container mx-auto pt-16">
+  <div class="container mx-auto pt-24">
     <router-view />
   </div>
   <!-- <footer>Footer text</footer> -->
@@ -19,5 +33,10 @@ export default defineComponent({
 <style lang="scss">
 header {
   display: flex;
+
+  .logo {
+    font-family: "Bebas Neue";
+    font-size: 2rem;
+  }
 }
 </style>

@@ -2,13 +2,13 @@
   <textarea
     ref="inputRef"
     class="textarea"
-    v-model="data"
+    :value="modelValue"
     @input="onEdit"
   ></textarea>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref, onMounted, TextareaHTMLAttributes } from "vue";
 
 export default defineComponent({
   name: "AutoResizableTextarea",
@@ -17,7 +17,6 @@ export default defineComponent({
   },
   emits: ["update:modelValue"],
   setup(props, { emit }) {
-    let data = ref<string>(props.modelValue ? props.modelValue : "");
     let inputRef = ref<HTMLTextAreaElement | null>(null);
 
     const resize = () => {
@@ -26,15 +25,14 @@ export default defineComponent({
         inputRef.value.style.height = `${inputRef.value.scrollHeight}px`;
       }
     };
-    const onEdit = () => {
+    const onEdit = (e: InputEvent) => {
       resize();
-      emit("update:modelValue", data);
+      emit("update:modelValue", (e.target as TextareaHTMLAttributes).value);
     };
     onMounted(() => {
       resize();
     });
     return {
-      data,
       inputRef,
       onEdit,
       resize,

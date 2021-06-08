@@ -1,6 +1,41 @@
 <template>
-  <component :is="tag" class="relative editable-field">
-    <div class="absolute field-name">{{ name }}</div>
+  <component
+    :is="tag"
+    class="
+      editable-field
+      relative
+      border-2 border-solid border-transparent
+      hover:border-indigo-500
+    "
+  >
+    <div
+      class="
+        header
+        absolute
+        h-8
+        text-base text-white
+        font-sans
+        py-1
+        px-2
+        right-0.5
+        -left-0.5
+        bottom-full
+        justify-between
+        bg-indigo-500
+      "
+    >
+      <div class="name">{{ name }}</div>
+      <div v-show="isEditingValue" class="controls flex items-center gap-2">
+        <div class="control flex justify-center items-center gap-0.5">
+          <button @click="cancel"><XIcon class="h-5 w-5 text-white" /></button>
+        </div>
+        <div class="control flex justify-center items-center gap-0.5">
+          <button @click="save">
+            <CheckIcon class="h-5 w-5 text-white" />
+          </button>
+        </div>
+      </div>
+    </div>
     <div v-show="!isEditingValue" @click="editField">
       <div v-if="useMarkdown" v-html="value"></div>
       <div v-else>{{ value }}</div>
@@ -9,20 +44,23 @@
       ref="inputRef"
       v-show="isEditingValue"
       v-model="editedValue"
-      class="w-full bg-transparent input"
+      class="w-full bg-transparent resize-none overflow-hidden"
     />
   </component>
 </template>
 
 <script lang="ts">
 import marked from "marked";
-import { defineComponent, ref, onBeforeUnmount } from "vue";
+import { defineComponent, ref } from "vue";
 import AutoResizableTextarea from "@/components/AutoResizableTextarea.vue";
+import { XIcon, CheckIcon } from "@heroicons/vue/solid";
 
 export default defineComponent({
   name: "EditableField",
   components: {
     AutoResizableTextarea,
+    XIcon,
+    CheckIcon,
   },
   props: {
     tag: String,
@@ -39,40 +77,31 @@ export default defineComponent({
         : props.initialValue
     );
     let editedValue = ref<string | undefined>(props.initialValue);
-
-    const stopEditing = (e: MouseEvent) => {
-      if (e.target !== inputRef.value?.$el) {
-        isEditingValue.value = false;
-        window.removeEventListener("click", stopEditing);
-      }
-    };
+    let oldEditedValue = ref<string | undefined>(props.initialValue);
 
     const editField = () => {
       if (!isEditingValue.value) {
         isEditingValue.value = !isEditingValue.value;
+        oldEditedValue.value = editedValue.value;
+
         requestAnimationFrame(() => {
           inputRef.value?.resize();
           inputRef.value?.$el?.focus();
-          window.addEventListener("click", stopEditing);
         });
       }
     };
 
-    const saveField = (e: KeyboardEvent) => {
-      if (e.key === "Enter" && isEditingValue.value) {
-        value.value = editedValue.value;
-        isEditingValue.value = !isEditingValue.value;
-      } else if (e.key === "Escape" && isEditingValue.value) {
-        editedValue.value = value.value;
-        isEditingValue.value = !isEditingValue.value;
-      }
+    const cancel = () => {
+      console.log(oldEditedValue.value);
+      console.log(editedValue.value);
+      editedValue.value = oldEditedValue.value;
+      isEditingValue.value = !isEditingValue.value;
     };
 
-    onBeforeUnmount(() => {
-      if (isEditingValue.value) {
-        window.removeEventListener("click", stopEditing);
-      }
-    });
+    const save = () => {
+      value.value = editedValue.value;
+      isEditingValue.value = !isEditingValue.value;
+    };
 
     return {
       value,
@@ -80,37 +109,23 @@ export default defineComponent({
       isEditingValue,
       inputRef,
       editField,
-      saveField,
+      cancel,
+      save,
     };
   },
 });
 </script>
 
 <style scoped lang="scss">
-.input {
-  text-align: inherit;
-  resize: none;
-  overflow: hidden;
-}
-
 .editable-field {
-  .field-name {
+  .header {
     display: none;
-    top: 0;
-    left: 0;
-    background: cornflowerblue;
-    color: white;
-    font-size: 1rem;
-    font-family: initial;
-    padding: 0 0.25rem;
+    width: calc(100% + 4px);
   }
 
   &:hover {
-    outline: 2px dotted black;
-
-    .field-name,
-    .field-controls {
-      display: block;
+    .header {
+      display: flex;
     }
   }
 }
