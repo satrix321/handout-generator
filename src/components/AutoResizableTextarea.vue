@@ -1,7 +1,7 @@
 <template>
   <textarea
     ref="inputRef"
-    class="textarea"
+    class="textarea resize-none overflow-hidden h-5"
     :value="modelValue"
     @input="onEdit"
   ></textarea>
@@ -43,8 +43,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .textarea {
-  resize: none;
-  height: 20px;
-  overflow: hidden;
+  text-align: inherit;
 }
 </style>

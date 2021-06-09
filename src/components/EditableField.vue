@@ -4,9 +4,11 @@
     class="
       editable-field
       relative
+      p-1
       border-2 border-solid border-transparent
       hover:border-indigo-500
     "
+    :class="{ 'border-indigo-500 is-editing-value': isEditingValue }"
   >
     <div
       class="
@@ -44,7 +46,7 @@
       ref="inputRef"
       v-show="isEditingValue"
       v-model="editedValue"
-      class="w-full bg-transparent resize-none overflow-hidden"
+      class="w-full bg-transparent"
     />
   </component>
 </template>
@@ -92,14 +94,14 @@ export default defineComponent({
     };
 
     const cancel = () => {
-      console.log(oldEditedValue.value);
-      console.log(editedValue.value);
       editedValue.value = oldEditedValue.value;
       isEditingValue.value = !isEditingValue.value;
     };
 
     const save = () => {
-      value.value = editedValue.value;
+      value.value = props.useMarkdown
+        ? marked(editedValue.value ?? "")
+        : editedValue.value;
       isEditingValue.value = !isEditingValue.value;
     };
 
@@ -123,6 +125,7 @@ export default defineComponent({
     width: calc(100% + 4px);
   }
 
+  &.is-editing-value,
   &:hover {
     .header {
       display: flex;
