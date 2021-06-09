@@ -16,7 +16,7 @@
       <router-link to="/" class="logo">HANDOUT GENERATOR</router-link>
     </div>
   </header>
-  <div class="container mx-auto pt-24">
+  <div class="container mx-auto pt-24 pb-8">
     <router-view />
   </div>
   <!-- <footer>Footer text</footer> -->

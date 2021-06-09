@@ -1,17 +1,17 @@
 <template>
-  <div class="home">
-    <Card />
+  <div>
+    <HandoutCard title="Newspaper Article" url="/handout/newspaper" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Card from "@/components/Card.vue";
+import HandoutCard from "@/components/HandoutCard.vue";
 
 export default defineComponent({
   name: "Home",
   components: {
-    Card,
+    HandoutCard,
   },
 });
 </script>
