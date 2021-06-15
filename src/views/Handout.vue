@@ -20,7 +20,10 @@ export default defineComponent({
 
     switch (handoutId?.value) {
       case "newspaper":
-        handoutComponent = <Newspaper />;
+        handoutComponent = <Newspaper variant="default" />;
+        break;
+      case "old-newspaper":
+        handoutComponent = <Newspaper variant="old" />;
         break;
       case "handwritten-letter":
         handoutComponent = <HandwrittenLetter />;

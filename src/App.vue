@@ -39,4 +39,8 @@ header {
     font-size: 2rem;
   }
 }
+
+.container {
+  max-width: 1600px;
+}
 </style>

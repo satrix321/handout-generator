@@ -71,15 +71,15 @@ export default defineComponent({
     initialValue: String,
   },
   setup(props) {
-    let inputRef = ref<typeof AutoResizableTextarea | null>(null);
-    let isEditingValue = ref<boolean>(false);
-    let value = ref<string | undefined>(
+    const inputRef = ref<typeof AutoResizableTextarea>();
+    const isEditingValue = ref<boolean>(false);
+    const value = ref<string | undefined>(
       props.initialValue && props.useMarkdown
         ? marked(props.initialValue)
         : props.initialValue
     );
-    let editedValue = ref<string | undefined>(props.initialValue);
-    let oldEditedValue = ref<string | undefined>(props.initialValue);
+    const editedValue = ref<string | undefined>(props.initialValue);
+    const oldEditedValue = ref<string | undefined>(props.initialValue);
 
     const editField = () => {
       if (!isEditingValue.value) {

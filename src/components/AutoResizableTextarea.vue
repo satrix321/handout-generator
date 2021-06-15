@@ -17,7 +17,7 @@ export default defineComponent({
   },
   emits: ["update:modelValue"],
   setup(props, { emit }) {
-    let inputRef = ref<HTMLTextAreaElement | null>(null);
+    const inputRef = ref<HTMLTextAreaElement>();
 
     const resize = () => {
       if (inputRef.value) {

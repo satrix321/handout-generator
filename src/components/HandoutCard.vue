@@ -1,10 +1,10 @@
 <template>
-  <router-link :to="url">
+  <router-link :to="url" class="handout-card">
     <div>
       <img
         class="rounded-xl mb-2"
-        style="width: 300px"
-        src="../assets/newspaper-headline.jpg"
+        :style="{ width: `${width}px` }"
+        :src="image"
       />
       <p class="mx-2">{{ title }}</p>
     </div>
@@ -17,11 +17,19 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "HandoutCard",
   props: {
-    title: String,
+    title: {
+      type: String,
+      required: true,
+    },
     url: {
       type: String,
       default: "/",
     },
+    image: {
+      type: String,
+      required: true,
+    },
+    width: Number,
   },
   setup() {
     return {};
@@ -29,4 +37,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.handout-card {
+  display: block;
+}
+</style>
