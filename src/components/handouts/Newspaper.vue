@@ -72,6 +72,7 @@ export default defineComponent({
 
 .content {
   font-family: "Newsreader", serif;
+  text-align: justify;
 
   &::v-deep h1,
   &::v-deep h2,
