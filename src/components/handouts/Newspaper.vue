@@ -60,11 +60,6 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.newspaper {
-  &.old {
-  }
-}
-
 .headline {
   font-family: "Bebas Neue", cursive;
   line-height: 1;

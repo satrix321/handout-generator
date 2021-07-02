@@ -42,6 +42,11 @@ export default defineComponent({
         url: "/handout/old-newspaper",
         image: require("@/assets/newspaper-headline.jpg"),
       },
+      {
+        title: "Handwritten Letter",
+        url: "/handout/handwritten-letter",
+        image: require("@/assets/newspaper-headline.jpg"),
+      },
     ]);
 
     const filteredHandoutCards = computed(() => {
