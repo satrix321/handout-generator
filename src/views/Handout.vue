@@ -7,7 +7,7 @@
 <script lang="tsx">
 import { Component, defineComponent, toRefs } from "vue";
 import Newspaper from "@/components/handouts/Newspaper.vue";
-import Letter from "@/components/handouts/Letter.vue";
+import HandwrittenLetter from "@/components/handouts/HandwrittenLetter.vue";
 
 export default defineComponent({
   name: "Prop",
@@ -26,7 +26,10 @@ export default defineComponent({
         handoutComponent = <Newspaper variant="old" />;
         break;
       case "handwritten-letter":
-        handoutComponent = <Letter variant="handwritten" />;
+        handoutComponent = <HandwrittenLetter variant="default" />;
+        break;
+      case "old-handwritten-letter":
+        handoutComponent = <HandwrittenLetter variant="old" />;
         break;
       default:
         break;

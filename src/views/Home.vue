@@ -35,17 +35,22 @@ export default defineComponent({
       {
         title: "Newspaper Article",
         url: "/handout/newspaper",
-        image: require("@/assets/newspaper-headline.jpg"),
+        image: require("@/assets/handout-samples/newspaper.jpg"),
       },
       {
         title: "Old Newspaper Article",
         url: "/handout/old-newspaper",
-        image: require("@/assets/newspaper-headline.jpg"),
+        image: require("@/assets/handout-samples/old-newspaper.jpg"),
       },
       {
         title: "Handwritten Letter",
         url: "/handout/handwritten-letter",
-        image: require("@/assets/newspaper-headline.jpg"),
+        image: require("@/assets/handout-samples/handwritten-letter.jpg"),
+      },
+      {
+        title: "Old Handwritten Letter",
+        url: "/handout/old-handwritten-letter",
+        image: require("@/assets/handout-samples/old-handwritten-letter.jpg"),
       },
     ]);
 
