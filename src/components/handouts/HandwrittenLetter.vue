@@ -1,12 +1,6 @@
 <template>
   <div :class="`letter ${variant}`">
-    <div
-      class="relative p-8 mx-auto"
-      :style="{
-        background: `url(${backgrounds[variant]})`,
-        width: '800px',
-      }"
-    >
+    <div class="relative p-8 mx-auto" :style="containerStyles[variant]">
       <EditableField
         tag="div"
         name="Salutation"
@@ -46,7 +40,7 @@ export default defineComponent({
   components: {
     EditableField,
   },
-  setup() {
+  setup(props) {
     const salutation = ref<string>(initialData.salutation);
     const content = ref<string>(initialData.content);
     const signature = ref<string>(initialData.signature);
@@ -56,11 +50,23 @@ export default defineComponent({
       old: require("@/assets/paper-texture-01.jpg"),
     };
 
+    const containerStyles = {
+      default: {
+        background: `url(${backgrounds[props.variant]})`,
+        width: "800px",
+      },
+      old: {
+        background: `url(${backgrounds[props.variant]})`,
+        width: "800px",
+      },
+    };
+
     return {
       salutation,
       content,
       signature,
       backgrounds,
+      containerStyles,
     };
   },
 });

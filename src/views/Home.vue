@@ -52,6 +52,11 @@ export default defineComponent({
         url: "/handout/old-handwritten-letter",
         image: require("@/assets/handout-samples/old-handwritten-letter.jpg"),
       },
+      {
+        title: "Old Business Card 01",
+        url: "/handout/old-business-card-01",
+        image: require("@/assets/handout-samples/old-business-card-01.jpg"),
+      },
     ]);
 
     const filteredHandoutCards = computed(() => {

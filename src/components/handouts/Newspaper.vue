@@ -1,12 +1,6 @@
 <template>
   <div :class="`newspaper ${variant}`">
-    <div
-      class="relative p-8 mx-auto"
-      :style="{
-        background: `url(${backgrounds[variant]})`,
-        width: '600px',
-      }"
-    >
+    <div class="relative p-8 mx-auto" :style="containerStyles[variant]">
       <EditableField
         tag="h1"
         name="Title"
@@ -41,7 +35,7 @@ export default defineComponent({
   components: {
     EditableField,
   },
-  setup() {
+  setup(props) {
     const title = ref<string>(initialData.title);
     const content = ref<string>(initialData.content);
 
@@ -50,10 +44,22 @@ export default defineComponent({
       old: require("@/assets/paper-texture-01.jpg"),
     };
 
+    const containerStyles = {
+      default: {
+        background: `url(${backgrounds[props.variant]})`,
+        width: "600px",
+      },
+      old: {
+        background: `url(${backgrounds[props.variant]})`,
+        width: "600px",
+      },
+    };
+
     return {
       title,
       content,
       backgrounds,
+      containerStyles,
     };
   },
 });
