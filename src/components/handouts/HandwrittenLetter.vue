@@ -80,7 +80,7 @@ export default defineComponent({
     font-family: "Parisienne", cursive;
     margin-top: 0;
 
-    &::v-deep p {
+    :deep(p) {
       margin-bottom: 1rem;
     }
   }
