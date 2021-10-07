@@ -6,7 +6,7 @@
       :title="item.title"
       :url="item.url"
       :image="item.image"
-      width="300"
+      :width="300"
       class="masonry-item"
     />
   </MasonryContainer>
@@ -56,6 +56,16 @@ export default defineComponent({
         title: "Old Business Card 01",
         url: "/handout/old-business-card-01",
         image: require("@/assets/handout-samples/old-business-card-01.jpg"),
+      },
+      {
+        title: "Old Business Card 02",
+        url: "/handout/old-business-card-02",
+        image: require("@/assets/handout-samples/old-business-card-02.jpg"),
+      },
+      {
+        title: "Old Business Card 03",
+        url: "/handout/old-business-card-03",
+        image: require("@/assets/handout-samples/old-business-card-03.jpg"),
       },
     ]);
 
