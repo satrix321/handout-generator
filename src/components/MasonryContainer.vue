@@ -16,6 +16,7 @@ export default defineComponent({
   setup() {
     const containerRef = ref<HTMLDivElement>();
     const isInitialized = ref<boolean>(false);
+    const columnsData = ref<Array<number>>([]);
     const itemWidth = 300;
     const gapWidth = 25;
     const gapHeight = 25;
@@ -59,8 +60,8 @@ export default defineComponent({
       return index;
     };
 
-    const reflow = () => {
-      if (containerRef.value?.children) {
+    const prepareContainer = () => {
+      if (containerRef.value) {
         const containerHtmlElement = containerRef.value;
         const containerWidth = Math.min(
           containerHtmlElement.clientWidth +
@@ -72,34 +73,66 @@ export default defineComponent({
           itemWidth,
           gapWidth
         );
-        const columnsData = new Array(calculatedColumnsData.columnsCount).fill(
-          0
-        );
+
+        columnsData.value = new Array<number>(
+          calculatedColumnsData.columnsCount
+        ).fill(0);
         containerHtmlElement.style.marginLeft = `${
           calculatedColumnsData.freeWidth / 2
         }px`;
         containerHtmlElement.style.marginRight = `${
           calculatedColumnsData.freeWidth / 2
         }px`;
+      }
+    };
 
+    const calculateItemPosition = (htmlElement: HTMLElement) => {
+      const itemHeight = htmlElement.offsetHeight;
+      const columnIndex = findLowestValueIndex(columnsData.value) as number;
+      htmlElement.dataset.gridColumn = columnIndex.toString();
+      htmlElement.dataset.left = (
+        columnIndex *
+        (itemWidth + gapWidth)
+      ).toString();
+      htmlElement.dataset.top = columnsData.value[columnIndex].toString();
+      htmlElement.dataset.positioned = "true";
+      htmlElement.style.position = "absolute";
+      htmlElement.style.left = `${columnIndex * (itemWidth + gapWidth)}px`;
+      htmlElement.style.top = `${columnsData.value[columnIndex]}px`;
+      columnsData.value[columnIndex] += Number(itemHeight) + gapHeight;
+    };
+
+    const reflow = () => {
+      prepareContainer();
+
+      if (containerRef.value) {
         for (const item of containerRef.value.children) {
-          const htmlElement = item as HTMLElement;
-          const itemHeight = htmlElement.offsetHeight;
-          const columnIndex = findLowestValueIndex(columnsData) as number;
-          htmlElement.dataset.gridColumn = columnIndex.toString();
-          htmlElement.dataset.top = columnsData[columnIndex];
-          htmlElement.style.position = "absolute";
-          htmlElement.style.left = `${columnIndex * (itemWidth + gapWidth)}px`;
-          htmlElement.style.top = `${columnsData[columnIndex]}px`;
-          columnsData[columnIndex] += Number(itemHeight) + gapHeight;
+          const htmlItem = item as HTMLElement;
+          if (htmlItem.dataset.imageLoaded === "true") {
+            calculateItemPosition(htmlItem);
+          }
         }
       }
     };
 
     onMounted(() => {
-      reflow();
+      prepareContainer();
       window.addEventListener("resize", reflow);
       isInitialized.value = true;
+
+      setInterval(() => {
+        if (containerRef.value) {
+          for (const item of containerRef.value.children) {
+            const htmlItem = item as HTMLElement;
+            if (
+              htmlItem.dataset.imageLoaded === "true" &&
+              htmlItem.dataset.positioned !== "true"
+            ) {
+              calculateItemPosition(htmlItem);
+            }
+          }
+        }
+      }, 200);
     });
 
     onUnmounted(() => {

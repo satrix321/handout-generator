@@ -1,8 +1,13 @@
 <template>
-  <router-link :to="url" class="handout-card">
+  <router-link
+    :to="url"
+    class="handout-card"
+    :data-image-loaded="isImageLoaded"
+  >
     <div>
       <img
         class="rounded-xl mb-2"
+        ref="imgRef"
         :style="{ width: `${width}px` }"
         :src="image"
       />
@@ -12,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, onMounted } from "vue";
 
 export default defineComponent({
   name: "HandoutCard",
@@ -32,7 +37,25 @@ export default defineComponent({
     width: Number,
   },
   setup() {
-    return {};
+    const imgRef = ref<HTMLImageElement>();
+    const isImageLoaded = ref<boolean>(false);
+
+    onMounted(() => {
+      if (imgRef.value) {
+        if (imgRef.value.complete) {
+          isImageLoaded.value = true;
+        } else {
+          imgRef.value.addEventListener("load", () => {
+            isImageLoaded.value = true;
+          });
+        }
+      }
+    });
+
+    return {
+      imgRef,
+      isImageLoaded,
+    };
   },
 });
 </script>
