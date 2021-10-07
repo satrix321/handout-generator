@@ -132,7 +132,7 @@ export default defineComponent({
             }
           }
         }
-      }, 200);
+      }, 200); // TODO: replace this with something else, maybe an event emitter?
     });
 
     onUnmounted(() => {
