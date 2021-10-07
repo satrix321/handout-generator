@@ -125,6 +125,10 @@ export default defineComponent({
     width: calc(100% + 4px);
   }
 
+  .name {
+    text-transform: capitalize;
+  }
+
   &.is-editing-value,
   &:hover {
     .header {
