@@ -75,43 +75,43 @@ export default defineComponent({
   font-family: "Newsreader", serif;
   text-align: justify;
 
-  &::v-deep h1,
-  &::v-deep h2,
-  &::v-deep h3,
-  &::v-deep h4,
-  &::v-deep h5,
-  &::v-deep h6 {
+  :deep(h1),
+  :deep(h2),
+  :deep(h3),
+  :deep(h4),
+  :deep(h5),
+  :deep(h6) {
     font-family: "Bebas Neue", cursive;
     text-align: center;
     line-height: 1;
     margin-bottom: 1rem;
   }
 
-  &::v-deep h1 {
+  :deep(h1) {
     font-size: 4rem;
   }
 
-  &::v-deep h2 {
+  :deep(h2) {
     font-size: 3.5rem;
   }
 
-  &::v-deep h3 {
+  :deep(h3) {
     font-size: 3rem;
   }
 
-  &::v-deep h4 {
+  :deep(h4) {
     font-size: 2.5rem;
   }
 
-  &::v-deep h5 {
+  :deep(h5) {
     font-size: 2rem;
   }
 
-  &::v-deep h6 {
+  :deep(h6) {
     font-size: 1.5rem;
   }
 
-  &::v-deep p {
+  :deep(p) {
     margin-bottom: 1rem;
   }
 }
