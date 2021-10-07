@@ -1,3 +1,5 @@
 {
-  "content": "Sample content"
+  "default": {
+    "content": "Sample content"
+  }
 }

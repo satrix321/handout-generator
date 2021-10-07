@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import EditableField from "@/components/EditableField.vue";
-import initialData from "@/initialData/Letter.json";
+import initialData from "@/initialData/HandwrittenLetter.json";
 import { defineComponent, PropType, ref } from "vue";
 
 export default defineComponent({
@@ -41,9 +41,9 @@ export default defineComponent({
     EditableField,
   },
   setup(props) {
-    const salutation = ref<string>(initialData.salutation);
-    const content = ref<string>(initialData.content);
-    const signature = ref<string>(initialData.signature);
+    const salutation = ref<string>(initialData[props.variant].salutation);
+    const content = ref<string>(initialData[props.variant].content);
+    const signature = ref<string>(initialData[props.variant].signature);
 
     const backgrounds = {
       default: require("@/assets/paper-texture-02.jpg"),

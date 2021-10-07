@@ -36,8 +36,8 @@ export default defineComponent({
     EditableField,
   },
   setup(props) {
-    const title = ref<string>(initialData.title);
-    const content = ref<string>(initialData.content);
+    const title = ref<string>(initialData[props.variant].title);
+    const content = ref<string>(initialData[props.variant].content);
 
     const backgrounds = {
       default: require("@/assets/paper-texture-02.jpg"),
