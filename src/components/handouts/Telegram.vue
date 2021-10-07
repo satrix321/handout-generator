@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import EditableField from "@/components/EditableField.vue";
-import initialData from "@/initialData/Letter.json";
+import initialData from "@/initialData/Sample.json";
 import { defineComponent, PropType, ref } from "vue";
 
 export default defineComponent({
@@ -29,7 +29,7 @@ export default defineComponent({
     EditableField,
   },
   setup(props) {
-    const content = ref<string>(initialData.content);
+    const content = ref<string>(initialData[props.variant].content);
 
     const backgrounds = {
       default: require("@/assets/telegram.jpg"),
