@@ -1,5 +1,26 @@
 {
-  "name": "John Doe",
-  "title": "Hand of the King",
-  "address": "26376 Alpine Lane, Twin Peaks, CA"
+  "default": {
+    "name": "John Doe",
+    "title": "Hand of the King",
+    "address1": "26376 Alpine Lane, Twin Peaks, CA",
+    "address2": "Telephone: Central 08-51, Metro: Richelieu-Drouot"
+  },
+  "old1": {
+    "name": "John Doe",
+    "title": "Photographe",
+    "address1": "26376 Alpine Lane, Twin Peaks, CA",
+    "address2": "Telephone: Central 08-51, Metro: Richelieu-Drouot"
+  },
+  "old2": {
+    "name": "John Doe",
+    "title": "Hand of the King",
+    "address1": "26376 Alpine Lane, Twin Peaks, CA",
+    "address2": "Telephone: Central 08-51, Metro: Richelieu-Drouot"
+  },
+  "old3": {
+    "name": "John Doe",
+    "title": "Hand of the King",
+    "address1": "26376 Alpine Lane, Twin Peaks, CA",
+    "address2": "Telephone: Central 08-51, Metro: Richelieu-Drouot"
+  }
 }

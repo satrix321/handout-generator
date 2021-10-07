@@ -33,7 +33,13 @@ export default defineComponent({
         handoutComponent = <HandwrittenLetter variant="old" />;
         break;
       case "old-business-card-01":
-        handoutComponent = <BusinessCard variant="old" />;
+        handoutComponent = <BusinessCard variant="old1" />;
+        break;
+      case "old-business-card-02":
+        handoutComponent = <BusinessCard variant="old2" />;
+        break;
+      case "old-business-card-03":
+        handoutComponent = <BusinessCard variant="old3" />;
         break;
       default:
         break;
