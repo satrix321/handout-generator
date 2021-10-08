@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/handout-generator/precache-manifest.80acaf744eb164d9cca8b000b5d780d7.js"
+  "/handout-generator/precache-manifest.65acfef8d90de9c783f7131ce4b0567e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "handout-generator"});
