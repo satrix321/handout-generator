@@ -34,13 +34,13 @@ export default defineComponent({
     const handoutCards = ref<HandoutCardRecord[]>([
       {
         title: "Newspaper Article",
-        url: "/handout/newspaper",
-        image: require("@/assets/handout-samples/newspaper.jpg"),
+        url: "/handout/newspaper-article",
+        image: require("@/assets/handout-samples/newspaper-article.jpg"),
       },
       {
         title: "Old Newspaper Article",
-        url: "/handout/old-newspaper",
-        image: require("@/assets/handout-samples/old-newspaper.jpg"),
+        url: "/handout/old-newspaper-article",
+        image: require("@/assets/handout-samples/old-newspaper-article.jpg"),
       },
       {
         title: "Handwritten Letter",

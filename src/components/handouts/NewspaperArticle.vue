@@ -1,5 +1,5 @@
 <template>
-  <div :class="`newspaper ${variant}`">
+  <div :class="`newspaper-article ${variant}`">
     <div class="relative p-8 mx-auto" :style="containerStyles[variant]">
       <EditableField
         tag="h1"
@@ -21,11 +21,11 @@
 
 <script lang="ts">
 import EditableField from "@/components/EditableField.vue";
-import initialData from "@/initialData/Newspaper.json";
+import initialData from "@/initialData/NewspaperArticle.json";
 import { defineComponent, ref, PropType } from "vue";
 
 export default defineComponent({
-  name: "Newspaper",
+  name: "NewspaperArticle",
   props: {
     variant: {
       type: String as PropType<"default" | "old">,

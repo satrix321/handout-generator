@@ -6,7 +6,7 @@
 
 <script lang="tsx">
 import { Component, defineComponent, toRefs } from "vue";
-import Newspaper from "@/components/handouts/Newspaper.vue";
+import NewspaperArticle from "@/components/handouts/NewspaperArticle.vue";
 import HandwrittenLetter from "@/components/handouts/HandwrittenLetter.vue";
 import BusinessCard from "@/components/handouts/BusinessCard.vue";
 
@@ -20,11 +20,11 @@ export default defineComponent({
     let handoutComponent: Component | undefined = undefined;
 
     switch (handoutId?.value) {
-      case "newspaper":
-        handoutComponent = <Newspaper variant="default" />;
+      case "newspaper-article":
+        handoutComponent = <NewspaperArticle variant="default" />;
         break;
-      case "old-newspaper":
-        handoutComponent = <Newspaper variant="old" />;
+      case "old-newspaper-article":
+        handoutComponent = <NewspaperArticle variant="old" />;
         break;
       case "handwritten-letter":
         handoutComponent = <HandwrittenLetter variant="default" />;
