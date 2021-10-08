@@ -32,7 +32,7 @@ export default defineComponent({
     const content = ref<string>(initialData[props.variant].content);
 
     const backgrounds = {
-      default: require("@/assets/telegram.jpg"),
+      default: require("@/assets/telegram-01.jpg"),
     };
 
     const containerStyles = {
