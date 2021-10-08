@@ -18,7 +18,7 @@ import initialData from "@/initialData/Sample.json";
 import { defineComponent, PropType, ref } from "vue";
 
 export default defineComponent({
-  name: "HandwrittenLetter",
+  name: "Sample",
   props: {
     variant: {
       type: String as PropType<"default">,

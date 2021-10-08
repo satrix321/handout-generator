@@ -9,6 +9,7 @@ import { Component, defineComponent, toRefs } from "vue";
 import NewspaperArticle from "@/components/handouts/NewspaperArticle.vue";
 import HandwrittenLetter from "@/components/handouts/HandwrittenLetter.vue";
 import BusinessCard from "@/components/handouts/BusinessCard.vue";
+import Telegram from "@/components/handouts/Telegram.vue";
 
 export default defineComponent({
   name: "Prop",
@@ -40,6 +41,9 @@ export default defineComponent({
         break;
       case "old-business-card-03":
         handoutComponent = <BusinessCard variant="old3" />;
+        break;
+      case "telegram-01":
+        handoutComponent = <Telegram variant="default" />;
         break;
       default:
         break;

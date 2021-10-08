@@ -67,6 +67,11 @@ export default defineComponent({
         url: "/handout/old-business-card-03",
         image: require("@/assets/handout-samples/old-business-card-03.jpg"),
       },
+      {
+        title: "Telegram 01",
+        url: "/handout/telegram-01",
+        image: require("@/assets/handout-samples/telegram-01.jpg"),
+      },
     ]);
 
     const filteredHandoutCards = computed(() => {
