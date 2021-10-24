@@ -1,0 +1,8 @@
+{
+  "default": {
+    "month": "January",
+    "year": "1923",
+    "departureTime": "14:30 hours",
+    "departureLocation": "St. Pancras Station, London"
+  }
+}

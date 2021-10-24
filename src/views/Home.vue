@@ -72,6 +72,11 @@ export default defineComponent({
         url: "/handout/telegram-01",
         image: require("@/assets/handout-samples/telegram-01.jpg"),
       },
+      {
+        title: "Orient Express Ticket",
+        url: "/handout/orient-express-ticket",
+        image: require("@/assets/handout-samples/orient-express-ticket.jpg"),
+      },
     ]);
 
     const filteredHandoutCards = computed(() => {
