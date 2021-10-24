@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "311d595d83e829b498b6",
+    "revision": "7f299fd54f25bd937f57",
     "url": "/handout-generator/css/app.393d0192.css"
   },
   {
-    "revision": "e4e9156e23962c81c3e2",
-    "url": "/handout-generator/css/chunk-vendors.3f1c2801.css"
+    "revision": "06623d81a5188e37ee2e",
+    "url": "/handout-generator/css/chunk-vendors.92285c6b.css"
   },
   {
-    "revision": "d128fefa3a7a9274b444",
-    "url": "/handout-generator/css/handout.f88343d2.css"
+    "revision": "5a0a6cb9cf1224b1a24b",
+    "url": "/handout-generator/css/handout.48b632c7.css"
   },
   {
     "revision": "134a92404f3cbf6481cb5412e59a640f",
@@ -52,6 +52,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/handout-generator/img/old-newspaper-article.10aa25c5.jpg"
   },
   {
+    "revision": "88eed6fd3679351c66d7e0f1b5594849",
+    "url": "/handout-generator/img/orient-express-ticket.88eed6fd.jpg"
+  },
+  {
+    "revision": "9bbe886d07d62a8f9ab3d3e83e9db15a",
+    "url": "/handout-generator/img/orient-express-ticket.9bbe886d.jpg"
+  },
+  {
     "revision": "e97aad15508018c8cc9af8f7b8c680fa",
     "url": "/handout-generator/img/paper-texture-01.e97aad15.jpg"
   },
@@ -68,20 +76,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/handout-generator/img/telegram-01.fa1ed77f.jpg"
   },
   {
-    "revision": "0191af0ad3e4d8b076b8faaecada5614",
+    "revision": "2803f9ab4c7aec1322fd31c1b677911b",
     "url": "/handout-generator/index.html"
   },
   {
-    "revision": "311d595d83e829b498b6",
-    "url": "/handout-generator/js/app.90e34b1d.js"
+    "revision": "7f299fd54f25bd937f57",
+    "url": "/handout-generator/js/app.ce2fc054.js"
   },
   {
-    "revision": "e4e9156e23962c81c3e2",
+    "revision": "06623d81a5188e37ee2e",
     "url": "/handout-generator/js/chunk-vendors.d75da46a.js"
   },
   {
-    "revision": "d128fefa3a7a9274b444",
-    "url": "/handout-generator/js/handout.0286b171.js"
+    "revision": "5a0a6cb9cf1224b1a24b",
+    "url": "/handout-generator/js/handout.45328520.js"
   },
   {
     "revision": "d41057e4d4e2f1ad77e20b74041f92d0",
