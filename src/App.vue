@@ -1,7 +1,6 @@
 <template>
   <header
     class="
-      fixed
       h-16
       flex
       items-center
@@ -16,7 +15,7 @@
       <router-link to="/" class="logo">HANDOUT GENERATOR</router-link>
     </div>
   </header>
-  <div class="container mx-auto pt-24 pb-8">
+  <div class="container mx-auto pt-16 pb-8">
     <router-view />
   </div>
   <!-- <footer>Footer text</footer> -->
