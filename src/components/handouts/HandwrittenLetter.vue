@@ -4,20 +4,20 @@
       <EditableField
         tag="div"
         name="Salutation"
-        class="salutation text-2xl mt-6"
+        class="salutation text-3xl mt-6"
         :initialValue="salutation"
       />
       <EditableField
         tag="div"
         name="Content"
-        class="content text-2xl mt-6"
+        class="content text-3xl mt-6"
         :initialValue="content"
         useMarkdown
       />
       <EditableField
         tag="pre"
         name="Signature"
-        class="signature text-2xl mt-6"
+        class="signature text-3xl mt-6"
         :initialValue="signature"
       />
     </div>
@@ -77,7 +77,7 @@ export default defineComponent({
   .salutation,
   .content,
   .signature {
-    font-family: "Parisienne", cursive;
+    font-family: "Ephesis", cursive;
     margin-top: 0;
 
     :deep(p) {
