@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2a43aea67f6d24b222ee",
-    "url": "/handout-generator/css/app.dffc9cba.css"
+    "revision": "3dc67f705418d1f474dc",
+    "url": "/handout-generator/css/app.eec2e923.css"
   },
   {
-    "revision": "53b56bf8881fd9623778",
-    "url": "/handout-generator/css/chunk-vendors.7d807341.css"
+    "revision": "70a8d700df8bbfccf167",
+    "url": "/handout-generator/css/chunk-vendors.d27f0492.css"
   },
   {
     "revision": "ddc0fb267ab4effe8069",
@@ -76,15 +76,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/handout-generator/img/telegram-01.fa1ed77f.jpg"
   },
   {
-    "revision": "af33dd5f9941f13510c09101a52db025",
+    "revision": "07428bb3d323e34099d544b01d1a7dfd",
     "url": "/handout-generator/index.html"
   },
   {
-    "revision": "2a43aea67f6d24b222ee",
-    "url": "/handout-generator/js/app.d062644c.js"
+    "revision": "3dc67f705418d1f474dc",
+    "url": "/handout-generator/js/app.7e38a724.js"
   },
   {
-    "revision": "53b56bf8881fd9623778",
+    "revision": "70a8d700df8bbfccf167",
     "url": "/handout-generator/js/chunk-vendors.d75da46a.js"
   },
   {
