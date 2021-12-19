@@ -118,7 +118,6 @@ export default defineComponent({
     onMounted(() => {
       prepareContainer();
       window.addEventListener("resize", reflow);
-      isInitialized.value = true;
 
       setInterval(() => {
         if (containerRef.value) {
@@ -132,6 +131,8 @@ export default defineComponent({
             }
           }
         }
+
+        isInitialized.value = true;
       }, 200); // TODO: replace this with something else, maybe an event emitter?
     });
 
